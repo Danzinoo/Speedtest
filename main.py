@@ -1,3 +1,6 @@
+# Please allow in excess of 1 minute
+# for the test to initialize and return a result
+
 import speedtest as st
 import tkinter as tk
 
@@ -10,7 +13,7 @@ def func_speed_test():
     speed_test = st.Speedtest()
     decimal_download_speed = speed_test.download()
     decimal_upload_speed = speed_test.upload()
-    download_speed = round(decimal_upload_speed / (10**6), 2)
+    download_speed = round(decimal_download_speed / (10**6), 2)
     upload_speed = round(decimal_upload_speed / (10**6), 2)
     download_label.config(text="Download speed :"+" "+str(download_speed)+"Mbps")
     upload_label.config(text="Upload speed :"+" "+str(upload_speed)+"Mbps")
